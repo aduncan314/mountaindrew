@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container main-blob">
+    <div class="myb jumbotron border border-dark">
+        <h1 class="display-4 text-center">Mountain Drew</h1>
+        <p>The home of {{ my_name }}</p>
+    </div>
+</div>
+
+
+{% block scripts %}
+    <!-- block.super will get the content of the block from the parent template -->
+    {{ block.super }}
+    <script src="{% static 'js/override_2.js' %}"></script>
+{% endblock %}
+
+{% endblock %}
