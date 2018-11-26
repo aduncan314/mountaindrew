@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-from config import DATABASES
+from config import DATABASES, SECRET_KEY
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,9 +20,6 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+mi7b2oi24wl!lp%3v+on@jr2e2wm08u$yyu!vph7=*ki2@&qe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
