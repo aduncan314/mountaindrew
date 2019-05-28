@@ -6,44 +6,23 @@
         <div class="myb jumbotron border border-dark">
             <h1 class="text-center display-4">Resume/CV</h1>
         </div>
-        <div class="row p-4">
+        <div id="cv-section" class="container-fluid">
+            <div class="row p-4">
 
-            <div class="col-md border border-primary rounded text-center p-2">
-                <button type="button" id="pdf" onclick="ChooseThis(id)" class="btn btn-primary p-4">
-                    Download pdf resume
-                </button>
+                <div class="col-md border border-primary rounded text-center p-2">
+                    <button type="button" id="pdf" onclick="ChooseThis(id)" class="btn btn-primary p-4">
+                        Download pdf resume
+                    </button>
+                </div>
+
+                <div class="col-md border border-primary rounded text-center p-2">
+                    <button type="button" id="html" onclick="ChooseThis(id)" class="btn btn-primary p-4">
+                        View resume
+                    </button>
+                </div>
             </div>
-
-            <div class="col-md border border-primary rounded text-center p-2">
-                <button type="button" id="html" onclick="ChooseThis(id)" class="btn btn-primary p-4">
-                    View resume
-                </button>
-            </div>
-
         </div>
     </div>
 
-
-        {#    js button control#}
-        <script>
-            function ChooseThis(id) {
-                var idOptions = ["pdf", "html"];
-
-                var this_index = idOptions.indexOf(id);
-                idOptions.splice(this_index, 1);
-                var otherIsSelected = document.getElementById(idOptions[0]).className.includes("btn-success");
-
-                if (otherIsSelected) {
-                    document.getElementById("pdf").classList.toggle("btn-success");
-                    document.getElementById("html").classList.toggle("btn-success");
-                } else {
-                    document.getElementById(id).classList.toggle("btn-success");
-                }
-                displayResume(id)
-            }
-
-            function displayResume (id){
-
-            }
-        </script>
+    <script src="{% static '/js/override_landing.js' %}"></script>
 {% endblock %}

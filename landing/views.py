@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from landing.forms import resume_choice_form
 
 
 # Create your views here.
@@ -12,5 +11,4 @@ def index(request):
 
 
 def cv(request):
-    this_form = resume_choice_form()
-    return render(request, 'cv.html', context={'form': this_form})
+    return render(request, 'cv.html', context=None)

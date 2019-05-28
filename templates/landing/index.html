@@ -10,11 +10,6 @@
     </div>
 </div>
 
-
-{% block scripts %}
-    <!-- block.super will get the content of the block from the parent template -->
-    {{ block.super }}
-    <script src="{% static 'js/override_2.js' %}"></script>
-{% endblock %}
+<script src="{% static "/js/override_landing.js" %}"></script>
 
 {% endblock %}

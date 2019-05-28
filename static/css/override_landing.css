@@ -1,7 +1,23 @@
+:root {
+    --color-one: #19be56;
+    --color-two: lightblue;
+    --color-three: darkblue;
+}
 .main-1 {
-    background-color: #5c7470;
+    background-color: var(--color-one);
+
+    /*background-image: url("../img/Baxter1.jpg");*/
+    /*background-size: cover;*/
 }
 
 .container.main-blob {
     padding-top: 10px;
+}
+
+#cv-section {
+    border-style: solid;
+    background-color: var(--color-three);
+    border-width: medium;
+    border-color: var(--color-two);
+    border-radius: 0.5em;
 }
