@@ -11,7 +11,9 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
-from config import DATABASES, SECRET_KEY
+import project_setup
+
+PROJECT_CONFIG = project_setup.get_settings()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -73,7 +75,22 @@ WSGI_APPLICATION = 'Mountaindrew.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
+DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(DB_DIR, 'db.sqlite3'),
+    # },
+    'default': {
+        'ENGINE': PROJECT_CONFIG['engine'],
+        'NAME': PROJECT_CONFIG['db_name'],
+        'USER': PROJECT_CONFIG['admin_user'],
+        'PASSWORD': PROJECT_CONFIG['admin_password'],
+        'HOST': PROJECT_CONFIG['db_host'],
+        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
+    }
+}
 
+SECRET_KEY = PROJECT_CONFIG['secret_key']
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
