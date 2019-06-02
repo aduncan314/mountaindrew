@@ -5,17 +5,24 @@ from django.utils import timezone
 class Category(models.Model):
     date_created = models.DateTimeField()
     last_updated = models.DateTimeField()
+    name = models.CharField(max_length=16)
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+
+    def __str__(self):
+        return self.name
 
 
 class BlogPost(models.Model):
     is_published = models.BooleanField()
     date_created = models.DateTimeField()
     last_updated = models.DateTimeField()
-    date_published = models.DateTimeField()
+    date_published = models.DateTimeField(null=True, blank=True)
 
     title = models.CharField(max_length=64)
     content = models.TextField()
-    category = models.ManyToManyField(Category, verbose_name="Category Tag")
+    category = models.ManyToManyField(Category, verbose_name="Category Tag", blank=True)
 
     class Meta:
         ordering = ['date_published', 'date_created']
@@ -26,4 +33,4 @@ class BlogPost(models.Model):
         self.save()
 
     def __str__(self):
-        return f'{self.title}: {self.date_published}'
+        return self.title

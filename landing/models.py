@@ -23,5 +23,8 @@ class Company(models.Model):
     state = models.CharField(max_length=2, blank=True)
     years_affiliated = models.CharField(max_length=64, blank=True)  # for descriptive times <1 year, every summer, etc.
 
+    class Meta:
+        verbose_name_plural = "Companies"
+
     def __str__(self):
         return self.name

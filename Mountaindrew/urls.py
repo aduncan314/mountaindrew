@@ -21,4 +21,5 @@ from django.conf.urls import include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('landing.app_urls', 'landing'), namespace='landing')),
+    path('blog/', include('blog.blog_urls', namespace='blog'))
 ]
