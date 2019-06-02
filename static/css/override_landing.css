@@ -1,13 +1,24 @@
 :root {
-    --color-one: #19be56;
+    --color-one: #4691da;
     --color-two: lightblue;
     --color-three: darkblue;
 }
 .main-1 {
-    background-color: var(--color-one);
+    /*background-color: var(--color-one);*/
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to right,
+    var(--color-three)10%,
+    var(--color-one)10%,
+    var(--color-one)90%,
+    var(--color-three)90%);
+}
 
-    /*background-image: url("../img/Baxter1.jpg");*/
-    /*background-size: cover;*/
+.footer {
+    /*position: fixed;*/
+    height: 100px;
+    bottom: 0;
+    width: 100%;
 }
 
 .container.main-blob {

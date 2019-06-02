@@ -2,8 +2,10 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h1>All Blogs Go To Heaven</h1>
-    {% block blog %}
-
-    {% endblock %}
+    <div class="container main-blob">
+    <div class="jumbotron">
+        <h1 class="text-center">All Blogs Go To Heaven</h1>
+    </div>
+        {% block blog %}{% endblock %}
+    </div>
 {% endblock %}

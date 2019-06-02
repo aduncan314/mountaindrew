@@ -32,5 +32,11 @@ class BlogPost(models.Model):
         self.date_published = timezone.now()
         self.save()
 
+    def get_preview(self):
+        if len(self.content) >= 200:
+            return f'{self.content[:197]}...'
+        else:
+            return self.content
+
     def __str__(self):
         return self.title

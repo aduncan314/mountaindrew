@@ -2,14 +2,23 @@
 {% load staticfiles %}
 
 {% block blog %}
-    <ol>
+    <ul class="list-unstyled">
         {% for post in all_blogs %}
             <li>
-                <h2><a class="text-xl-left" href="{{ post.id }}">{{ post.title }}: </a>
-                    <small class="text-muted">{{ post.date_published }}</small>
-                </h2>
+{#                <div class="container" style="border: transparent; border-width: thick;">#}
+                    <div class="card m-2">
+                        <div class="card-header">
+                            <a class="text-xl-left" href="{{ post.id }}">{{ post.title }}:
+                                <small class="text-muted">{{ post.date_published }}</small>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">{{ post.get_preview }}</p>
+                        </div>
+                    </div>
+{#                </div>#}
             </li>
         {% endfor %}
-    </ol>
+    </ul>
 
 {% endblock %}

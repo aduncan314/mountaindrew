@@ -2,4 +2,9 @@
 {% load staticfiles %}
 
 {% block blog %}
+    <div class="jumbotron">
+    <h1 class="text-center">{{ blog_post.title }}</h1>
+    <hr>
+    <p>{{ blog_post.content|safe }}</p>
+    </div>
 {% endblock %}
