@@ -1,2 +1,5 @@
 config.json
 *sqlite*
+.idea
+__pycache__/
+*.pyc
