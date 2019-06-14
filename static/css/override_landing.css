@@ -2,16 +2,24 @@
     --color-one: #4691da;
     --color-two: lightblue;
     --color-three: darkblue;
+    --color-four: #b1cee6;
 }
 .main-1 {
-    /*background-color: var(--color-one);*/
-    height: 100%;
-    width: 100%;
+    background-color: var(--color-two);
+    /*height: 100%;*/
+    /*width: 100%;*/
+    /*background-image: linear-gradient(to right,*/
+    /*var(--color-three)10%,*/
+    /*var(--color-one)10%,*/
+    /*var(--color-one)90%,*/
+    /*var(--color-three)90%);*/
+    /*    height: 100%;*/
+    /*width: 100%;*/
     background-image: linear-gradient(to right,
-    var(--color-three)10%,
-    var(--color-one)10%,
-    var(--color-one)90%,
-    var(--color-three)90%);
+    var(--color-four),
+    var(--color-one),
+    /*var(--color-four),*/
+    var(--color-four));
 }
 
 .footer {
@@ -21,9 +29,14 @@
     width: 100%;
 }
 
-.container.main-blob {
+.main-blob {
     padding-top: 10px;
 }
+
+.main-padding{
+    padding: 10px;
+}
+
 
 #cv-section {
     border-style: solid;

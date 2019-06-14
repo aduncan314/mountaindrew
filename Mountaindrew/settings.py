@@ -82,7 +82,6 @@ DATABASES = {
         'USER': PROJECT_CONFIG['admin_user'],
         'PASSWORD': PROJECT_CONFIG['admin_password'],
         'HOST': PROJECT_CONFIG['db_host'],
-        'OPTIONS': {'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"}
     }
 }
 
