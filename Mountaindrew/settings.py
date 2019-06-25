@@ -26,9 +26,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'site/static/')
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = PROJECT_CONFIG.get('debug', False)
 
-ALLOWED_HOSTS = ['localhost', 'www.mountain-drew.com', 'mountain-drew.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'www.mountain-drew.com', 'mountain-drew.com']
 
 # Application definition
 INSTALLED_APPS = [

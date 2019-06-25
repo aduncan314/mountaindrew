@@ -16,10 +16,11 @@
 {#NAVBAR#}
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-    <a class="navbar-brand" href="{% url 'landing:index' %}"><img title="Mountain Drew"
-                                                                  style="max-width:80px; margin-top: -7px; border-radius: 5px"
-                                                                  src="{% static 'img/Baxter1.jpg' %}"
+    <a class="navbar-brand" href="{% url 'landing:index' %}"><img title="Home"
+                                                                  style="width: 50px;"
+                                                                  src="{% static 'img/mountain-outline.svg' %}"
                                                                   alt="Mountain Drew"></a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,20 +29,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'landing:index' %}">Home</a>
-            </li>
-
 {#            <li class="nav-item active">#}
-{#                <a class="nav-link" href="{% url 'landing:cv' %}">CV</a>#}
-{#            </li>#}
+            {#                <a class="nav-link" href="{% url 'landing:index' %}">Home</a>#}
+            {#            </li>#}
+
+            {#            <li class="nav-item active">#}
+            {#                <a class="nav-link" href="{% url 'landing:cv' %}">CV</a>#}
+            {#            </li>#}
 
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'blog:Blog' %}">Blog</a>
             </li>
         </ul>
-
-
     </div>
 </nav>
 
