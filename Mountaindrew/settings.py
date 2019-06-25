@@ -28,7 +28,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'site/assets/')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', 'www.mountain-drew.com', 'mountain-drew.com']
 
 # Application definition
 INSTALLED_APPS = [
