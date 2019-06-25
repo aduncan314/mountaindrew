@@ -7,7 +7,7 @@
     <title>My Resume and CV</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "css/override_landing.css" %}"/>
+    <link rel="stylesheet" href="{% static "css/override_general.css" %}"/>
 </head>
 
 <body class="main-1">
@@ -32,9 +32,9 @@
                 <a class="nav-link" href="{% url 'landing:index' %}">Home</a>
             </li>
 
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'landing:cv' %}">CV</a>
-            </li>
+{#            <li class="nav-item active">#}
+{#                <a class="nav-link" href="{% url 'landing:cv' %}">CV</a>#}
+{#            </li>#}
 
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'blog:Blog' %}">Blog</a>
@@ -66,7 +66,7 @@
 
 {#FOOTER#}
 <footer class="border-1 fixed-bottom navbar navbar-expand-lg navbar-light bg-light">This is an unused footer</footer>
-<script src="{% static "/js/override_landing.js" %}"></script>
+<script src="{% static "/js/override_general.js" %}"></script>
 
 
 {#SCRIPTS#}
@@ -79,7 +79,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-<script src="{% static "/js/override_landing.js" %}"></script>
+<script src="{% static "/js/override_general.js" %}"></script>
 
 </body>
 </html>
