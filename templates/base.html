@@ -4,17 +4,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    {# For Mobile? #}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Resume and CV</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "css/override_general.css" %}"/>
 </head>
 
+
 <body class="main-1">
 
 
 {#NAVBAR#}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
 
     <a class="navbar-brand" href="{% url 'landing:index' %}"><img title="Home"
                                                                   style="width: 50px;"
@@ -29,18 +32,20 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
         <ul class="navbar-nav mr-auto">
-{#            <li class="nav-item active">#}
-            {#                <a class="nav-link" href="{% url 'landing:index' %}">Home</a>#}
-            {#            </li>#}
-
-            {#            <li class="nav-item active">#}
-            {#                <a class="nav-link" href="{% url 'landing:cv' %}">CV</a>#}
-            {#            </li>#}
-
-            <li class="nav-item active">
-                <a class="nav-link" href="{% url 'blog:Blog' %}">Blog</a>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'blog:Blog' %}">Blog</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Connect With Me
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="https://github.com/aduncan314">Github</a>
+                    <a class="dropdown-item" href="https://www.linkedin.com/in/andrew-duncan-5b2b24188/">LinkedIn</a>
+                </div>
             </li>
         </ul>
+
     </div>
 </nav>
 
@@ -63,8 +68,6 @@
 </div>
 
 
-{#FOOTER#}
-<footer class="border-1 fixed-bottom navbar navbar-expand-lg navbar-light bg-light">This is an unused footer</footer>
 <script src="{% static "/js/override_general.js" %}"></script>
 
 
