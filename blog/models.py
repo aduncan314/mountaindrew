@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 
 
 class Category(models.Model):
@@ -25,18 +24,16 @@ class BlogPost(models.Model):
     category = models.ManyToManyField(Category, verbose_name="Category Tag", blank=True)
 
     class Meta:
-        ordering = ['date_published', 'date_created']
-
-    def publish(self):
-        self.is_published = True
-        self.date_published = timezone.now()
-        self.save()
+        ordering = ['-date_published', '-date_created']
 
     def get_preview(self):
         if len(self.content) >= 200:
             return f'{self.content[:197]}...'
         else:
             return self.content
+
+    def get_categories(self):
+        return [tag['name'] for tag in self.category.values()]
 
     def __str__(self):
         return self.title
