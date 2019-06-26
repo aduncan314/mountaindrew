@@ -3,8 +3,12 @@
 
 {% block blog %}
     <div class="jumbotron">
-    <h1 class="text-center">{{ blog_post.title }}</h1>
-    <hr>
-    <p>{{ blog_post.content|safe }}</p>
+        <h1 class="text-center">{{ blog_post.title }}</h1>
+        <p class="text-md-right">Published: {{ blog_post.date_published }}</p>
+        {% if blog_post.is_edited %}
+            <p class="text-md-right text-muted">Edited: {{ blog_post.last_updated }}</p>
+        {% endif %}
+        <hr>
+        <p>{{ blog_post.content|safe }}</p>
     </div>
 {% endblock %}

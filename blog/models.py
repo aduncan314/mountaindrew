@@ -35,5 +35,10 @@ class BlogPost(models.Model):
     def get_categories(self):
         return [tag['name'] for tag in self.category.values()]
 
+    def is_edited(self):
+        time_diff = self.last_updated - self.date_published
+        # Seconds are not cumulative
+        return (time_diff.seconds > 30) and (time_diff.days >= 0)
+
     def __str__(self):
         return self.title
