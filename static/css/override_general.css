@@ -6,10 +6,12 @@
 }
 
 .main-1 {
-    background-image: linear-gradient(to right,
-    var(--color-four),
+    height: 150vh;
+    background: radial-gradient(ellipse at 70% 0%, #ffc900 1vh,
+        /*var(--color-four),*/ var(--color-two),
     var(--color-one),
-    var(--color-four));
+    transparent),
+    radial-gradient(ellipse at center, #522266, #522200);
 }
 
 
