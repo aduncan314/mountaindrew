@@ -1,64 +1,13 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load staticfiles %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Mountain Drew Maintenance</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static "css/override_general.css" %}"/>
-</head>
-
-<style>
-    :root {
-        --color-one: #4691da;
-        --color-two: lightblue;
-        --color-three: darkblue;
-        --color-four: #b1cee6;
-    }
-    .main-1 {
-        background-image: linear-gradient(to right,
-        var(--color-four),
-        var(--color-one),
-        var(--color-four));
-    }
-    .main-blob {
-        padding-top: 10px;
-    }
-</style>
-
-<body class="main-1">
-
-
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-     y="0px" viewBox="0 0 446.7 273.9" enable-background="new 0 0 446.7 273.9" xml:space="preserve" width="100%" height="500">
-	<polygon
-            points="183.8,70 284.4,219.8 323.8,161 399.7,273.9 446.7,273.9 323.8,91 284.4,149.8 183.8,0 0,273.9 47,273.9 "/>
-</svg>
-
-
-{#MAIN CONTENT - BACKGROUND AND BLOCK#}
-<div class="main-blob">
-
-    <div class="row main-padding">
-        <div class="col-md-2"></div>
-
-        <div class="col-md-8">
-            <div class="myb jumbotron border border-dark">
-                <h1 class="display-3 text-center">Site Maintenance</h1>
-                <p>You are seeing this page because maintenance is being performed on the actual site. Maybe
-                    I'm
-                    performing very important and technically detailed upgrades... or maybe it's just ugly and I don't
-                    want you
-                    to see it. Either, come back soon!</p>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
+{% block content %}
+    <div class="myb jumbotron border border-dark">
+        <h1 class="display-3 text-center">4 0 4</h1>
+        <hr>
+        <hr>
+        <p>This is a pretty small site so I'm not sure how you ended up here...</p>
     </div>
-</div>
 
 
-</body>
-</html>
-
+{% endblock %}
