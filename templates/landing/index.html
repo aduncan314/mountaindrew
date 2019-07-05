@@ -6,13 +6,24 @@
         <h1 class="display-3 text-center">Mountain Drew</h1>
         <hr>
         <hr>
-        <p>I am an early career developer with a degree in Mathematics and Physics, two years writing python (a
-            lot more for fun!) and three years in Education. I'm happy to write html/css/javascript, but I really enjoy
-            working with data, databases, APIs, and other hidden parts of an application that keep it running.</p>
-        <p>I am making this site as a tool to push me to learn more. I chose to use nginx/gunicorn/Django because of my
-            comfort with python and I'm using Bootstrap to start. This is only a rough start, but I plan to make changes
-            and <a href="{% url 'blog:Blog' %}">blog</a> about what I learn.</p>
+        <p>Hi, I am Drew. I am a Boston-based developer who enjoys working with data, databases, APIs, and other hidden
+            parts of an application that keep it running.</p>
+        <p>For the past two years I wrote python everyday and <a href="https://xkcd.com/2054/">managed data
+            pipelines</a> for an ed tech company. Before that, I taught <a href="https://xkcd.com/2117/">AP Calc</a> and
+            other math courses at a charter school in Everett. I graduated with a BS in <a
+                    href="https://xkcd.com/410/">Math</a> and <a href="https://xkcd.com/1240/">Physics</a> from UMass
+            Boston.</p>
+        <p>I am using this site to learn more about full-stack development. It’s built with nginx/gunicorn/Django and
+            Bootstrap for the front-end to start. I’ll be writing about what I learn on my <a
+                    href="{% url 'blog:Blog' %}">blog</a>.</p>
+        <p>When I am not programming, I am probably playing bass in my classic rock cover band, playing with synths,
+            climbing a rock, or <span data-toggle="tooltip"
+                    title="This is my wife's commentary">finding another hobby that involves lots of gear.</span>
+        </p>
     </div>
+    <script>$(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })</script>
 
 
 {% endblock %}
