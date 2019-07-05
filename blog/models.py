@@ -38,7 +38,7 @@ class BlogPost(models.Model):
     def is_edited(self):
         time_diff = self.last_updated - self.date_published
         # Seconds are not cumulative
-        return (time_diff.seconds > 30) and (time_diff.days >= 0)
+        return (time_diff.seconds > 2 * 60) and (time_diff.days >= 0)
 
     def __str__(self):
         return self.title
