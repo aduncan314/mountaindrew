@@ -2,29 +2,68 @@
 {% load staticfiles %}
 
 {% block blog %}
+    {#        PAGINATION        #}
+    {#    TODO: rewrite with JS using only one GET     #}
+    {% if is_paginated %}
+        <div aria-label="Page navigation">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="/blog?page={{ page_obj.previous_page_number }}"
+                           aria-label="previous">&laquo</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-disabled="true">&laquo</a>
+                    </li>
+                {% endif %}
+                {% for num in paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <li class="page-item active">
+                            <a class="page-link" href="/blog?page={{ num }}">{{ num }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="/blog?page={{ num }}">{{ num }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="/blog?page={{ page_obj.next_page_number }}"
+                           aria-label="next">&raquo</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#"
+                           aria-disabled="true">&raquo</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    {% endif %}
+
+
+    {#    CARDS     #}
+
     <ul class="list-unstyled">
         {% for post in all_blogs %}
-            {% if post.is_published %}
-                <li>
-                    <div class="card m-2">
-                        <div class="card-header">
-                            <a class="h4" href="{{ post.id }}">{{ post.title }}  </a>
-                            <small class="text-muted">{{ post.date_published }}</small>
-                            <div class="d-flex flex-row-reverse">
-                                {% for tag in post.get_categories %}
-                                    <span class="p-2 badge badge-secondary" style="margin: 0.5%;">
+            <li class="card m-2">
+                <div class="card-header">
+                    <a class="h4" href="{{ post.id }}">{{ post.title }}  </a>
+                    <small class="text-muted">{{ post.date_published }}</small>
+                    <div class="d-flex flex-row-reverse">
+                        {% for tag in post.get_categories %}
+                            <span class="p-2 badge badge-secondary" style="margin: 0.5%;">
                                         {{ tag }}
                                     </span>
-                                {% endfor %}
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">{{ post.get_preview|safe }}</p>
-                        </div>
+                        {% endfor %}
                     </div>
-                </li>
-            {% endif %}
+                </div>
+                <div class="card-body">
+                    <p class="card-text">{{ post.get_preview|safe }}</p>
+                </div>
+            </li>
         {% endfor %}
     </ul>
-
 {% endblock %}

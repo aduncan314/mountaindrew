@@ -7,6 +7,11 @@ class BlogListView(ListView):
     template_name = 'blog/list.html'
     context_object_name = 'all_blogs'
     model = models.BlogPost
+    paginate_by = 5
+
+    def get_queryset(self):
+        my_queryset = super().get_queryset()
+        return [p for p in my_queryset if p.is_published]
 
 
 class SingleBlogView(DetailView):
