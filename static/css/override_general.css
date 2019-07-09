@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
 :root {
+    font-family: "Roboto", "Lucida Grande", "DejaVu Sans", "Bitstream Vera Sans", Verdana, Arial, sans-serif;
     --color-one: #4691da;
     --color-two: lightblue;
     --color-three: darkblue;
