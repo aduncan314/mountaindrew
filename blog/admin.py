@@ -5,7 +5,7 @@ from blog.models import BlogPost, Category
 
 
 class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ['title', 'is_published', 'date_created']
+    list_display = ['title', 'is_published', 'date_created', 'date_published']
     ordering = ['date_created']
     actions = ['publish']
 
