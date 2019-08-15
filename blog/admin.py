@@ -10,7 +10,8 @@ class BlogPostAdmin(admin.ModelAdmin):
     actions = ['publish']
 
     def publish(self, request, queryset):
-        blogs_published = queryset.update(is_published=True, last_updated=timezone.now(), date_published=timezone.now())
+        _now = timezone.now()
+        blogs_published = queryset.update(is_published=True, last_updated=_now, date_published=_now)
         msg = "1 blog published" if blogs_published == 1 else f"{blogs_published} blogs published"
         self.message_user(request, msg)
 
