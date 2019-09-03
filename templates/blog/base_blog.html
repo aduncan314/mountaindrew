@@ -1,6 +1,15 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
+{% block titler %}
+    <title>All Blogs Go To Heaven</title>
+{% endblock %}
+
+{#Additional css for python formatting#}
+{% block add_css %}
+<link rel="stylesheet" href="{% static 'css/default.css' %}">
+<link rel="stylesheet" href="{% static 'css/pygment.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="jumbotron">
