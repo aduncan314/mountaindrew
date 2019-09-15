@@ -1,3 +1,5 @@
+import re
+
 from django.db import models
 
 
@@ -26,9 +28,20 @@ class BlogPost(models.Model):
     class Meta:
         ordering = ['-date_published', '-date_created']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.cleaned_content = self._clean_content()
+
+    def _clean_content(self):
+        """
+        Remove HTML tags and markdown ticks for clean copy of content
+        :return:
+        """
+        return re.sub('```\w*', '', re.sub('<.*>', '', self.content))
+
     def get_preview(self):
-        if len(self.content) >= 200:
-            return f'{self.content[:197]}...'
+        if len(self.cleaned_content) >= 200:
+            return f'{self.cleaned_content[:197]}...'
         else:
             return self.content
 
