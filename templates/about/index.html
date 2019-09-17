@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block titler %}
+    <title>About ME</title>
+{% endblock %}
+{% block add_css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+
+
+        <div class="">
+            <h1 class="text-center">Resume</h1>
+            {% for jerb in job %}
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card-body">
+                                <h6 class="card-title">{{ jerb.company_id }}</h6>
+                                <p class="card-text small">{{ jerb.company_id.address_line_one }}</p>
+                                <p class="card-text small">{{ jerb.company_id.city }}, {{ jerb.company_id.state }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    {{ jerb.job_title }}
+                                </h5>
+                                <p class="card-text">
+                                    {{ jerb.description }}
+                                </p>
+                                <ul>
+                                    {% for detail in jerb.jobdetail_set.all %}
+                                        <li>
+                                            <p class="card-text small">
+                                                {{ detail.description }}
+                                            </p>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+
+        <div class="music">
+            <h1 class="text-center">Music</h1>
+
+            <div class="container-fluid soundcloud">
+                <div class="row">
+                    <div class="col-4">
+                        <p class="soundcloud quote">
+                            I play guitar and bass mostly, but when I'm at home I like to use the power of a computer.
+                            Here are a few things I've finished. Usually the final mixing/mastering takes the most time.
+                        </p>
+                    </div>
+                    <div class="col-8">
+                        <ul class="list-group ">
+                            <li class="list-group-item">
+                                <iframe class="soundcloud frame"
+                                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/681888461&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                                </iframe>
+                            </li>
+                            <li class="list-group-item">
+                                <iframe class="soundcloud frame"
+                                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/681889592&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                                </iframe>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+<script src="{% static "/js/about.js" %}"></script>

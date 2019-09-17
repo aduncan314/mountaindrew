@@ -10,8 +10,8 @@ class BlogListView(ListView):
     paginate_by = 5
 
     def get_queryset(self):
-        my_queryset = super().get_queryset()
-        return [p for p in my_queryset if p.is_published]
+        _queryset = super().get_queryset()
+        return [p for p in _queryset if p.is_published]
 
 
 class SingleBlogView(DetailView):

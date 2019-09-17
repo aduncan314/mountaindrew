@@ -3,3 +3,5 @@ config.json
 .idea
 __pycache__/
 *.pyc
+
+migrations

@@ -1,0 +1,19 @@
+.resume {
+
+}
+
+.music {
+    text-align: center;
+}
+
+.soundcloud.quote{
+    height: 100%;
+    padding: 1em;
+    border-style: solid;
+    border-radius: 1em;
+}
+
+.soundcloud.frame {
+    height: 120px;
+    width: 100%;
+}

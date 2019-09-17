@@ -11,6 +11,7 @@
         <title>Mountain Drew</title>
     {% endblock %}
 
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/mountain-outline.svg' %}"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "css/override_general.css" %}"/>
@@ -39,6 +40,7 @@
 
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="{% url 'blog:Blog' %}">Blog</a></li>
+            <li class="nav-item active"><a class="nav-link" href="{% url 'about:About Me' %}">About Me/Resume</a></li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button"
                    data-toggle="dropdown"
@@ -59,7 +61,8 @@
 {#MAIN CONTENT - BACKGROUND AND BLOCK#}
 <div class="main-blob">
 
-    <img src="{% static "img/mountain-outline.svg" %}" class="background-img" width="100%" height="500">
+    <img src="{% static "img/mountain-outline.svg" %}" alt="MountainDrew" class="background-img" width="100%"
+         height="500">
     <div class="row main-padding">
         <div class="col-md-2"></div>
 
