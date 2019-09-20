@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.views.generic import ListView, DetailView
 
 from blog import models
@@ -18,3 +19,9 @@ class SingleBlogView(DetailView):
     template_name = 'blog/single.html'
     context_object_name = 'blog_post'
     model = models.BlogPost
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset=queryset)
+        if not obj.is_published:
+            raise Http404()
+        return obj
