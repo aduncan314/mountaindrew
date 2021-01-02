@@ -1,5 +1,6 @@
-import mistune
 import logging
+
+import mistune
 from django import template
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
@@ -11,15 +12,21 @@ register = template.Library()
 
 class HighlightRenderer(mistune.Renderer):
     """
-    Mistune renderer use by Markdown class. Taken from mistune site example with better error handling
+    Mistune renderer for formatting code in blog posts.
+
+    Render Markdown including inline and block code snippets. Block code
+    code snippets will pass the first token as `lang` to apply the appropriate
+    formatting.
+
+    Source: https://pypi.org/project/mistune/
     """
+
     def block_code(self, code, lang=None):
         try:
             lexer = get_lexer_by_name(lang, stripall=True)
             formatter = HtmlFormatter()
             return highlight(code, lexer, formatter)
         except Exception as e:
-            # Log error but don't worry
             logger.error(e)
             return '\n<pre><code>%s</code></pre>\n' % \
                    mistune.escape(code)
@@ -27,6 +34,9 @@ class HighlightRenderer(mistune.Renderer):
 
 @register.filter
 def markdown(value):
+    """
+    Markdown filter for formatting markdown and code formatting in blog posts.
+    """
     renderer = HighlightRenderer()
     md = mistune.Markdown(renderer=renderer)
     return md(value)
