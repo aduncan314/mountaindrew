@@ -16,6 +16,8 @@ Fields:
 - admin_user
 - admin_password
 - db_host
+- log_file (optional)
+- log_level (optional)
 
 Example:
 ```

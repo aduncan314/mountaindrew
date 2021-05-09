@@ -104,13 +104,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'US/Eastern'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -131,16 +127,16 @@ LOGGING = {
     },
     'handlers': {
         'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'formatter': 'verbose',
-            'filename': PROJECT_CONFIG['log_file'],
+            'level': "DEBUG",
+            'class': "logging.FileHandler",
+            'formatter': "verbose",
+            'filename': PROJECT_CONFIG.get('log_file', os.path.join(BASE_DIR, "LOGFILE"))
         },
     },
     'loggers': {
         'django': {
             'handlers': ['file'],
-            'level': PROJECT_CONFIG['log_level'],
+            'level': PROJECT_CONFIG.get('log_level', "DEBUG"),
             'propagate': True,
         },
     },

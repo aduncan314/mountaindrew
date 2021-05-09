@@ -9,4 +9,6 @@ def get_settings():
         with open(os.path.join(BASE_DIR, 'config.json'), 'r') as f:
             return json.load(f)
     except Exception as e:
-        raise RuntimeError("FATAL ERROR: configurations not properly set")
+        raise RuntimeError(
+            "No `config.json` with user settings found. See README.md for example."
+        )
